@@ -6,6 +6,7 @@
 class Shape {
  public:
   Shape(std::string name) : m_name(std::move(name)) {}
+  virtual ~Shape() {}
 
   virtual double area() const = 0;
 

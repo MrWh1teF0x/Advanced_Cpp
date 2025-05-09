@@ -16,4 +16,4 @@ set(HEADERS
   triangle.h
 )
 
-add_library(${PROJECT} SHARED ${SOURCES} ${HEADERS})
+add_library(${PROJECT} ${SOURCES} ${HEADERS})

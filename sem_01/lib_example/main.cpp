@@ -2,9 +2,9 @@
 #include <memory>
 #include <vector>
 
-#include "shapelib/circle.h"
-#include "shapelib/rectangle.h"
-#include "shapelib/triangle.h"
+#include "circle.h"
+#include "rectangle.h"
+#include "triangle.h"
 
 int main() {
   std::vector<std::unique_ptr<Shape>> shapes;
