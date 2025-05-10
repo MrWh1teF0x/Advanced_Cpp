@@ -5,9 +5,9 @@
 #include <string>
 #include <vector>
 
-#include "lib/group.h"
-#include "lib/manager.h"
-#include "lib/user.h"
+#include "src/group.h"
+#include "src/manager.h"
+#include "src/user.h"
 
 void rtrim(std::string& s) {
   size_t i = s.size();
