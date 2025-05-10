@@ -38,10 +38,6 @@ class Manager {
  private:
   std::map<int, std::shared_ptr<User>> all_users_;
   std::map<int, std::shared_ptr<Group>> all_groups_;
-
-  int FindUserIndex(int id) const;
-
-  int FindGroupIndex(int id) const;
 };
 
 #endif  // MANAGER_H
