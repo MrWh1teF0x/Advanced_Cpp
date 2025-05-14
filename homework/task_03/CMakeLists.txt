@@ -12,3 +12,5 @@ file(GLOB PROJECT_SOURCES
 )
 
 add_executable(${PROJECT_NAME} main.cpp ${PROJECT_SOURCES})
+
+target_link_libraries(task_03 PRIVATE typelist)
