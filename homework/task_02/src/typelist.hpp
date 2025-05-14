@@ -2,7 +2,6 @@
 #define TYPELIST_HPP
 
 #include <cstddef>
-#include <type_traits>
 
 namespace typelist {
 
