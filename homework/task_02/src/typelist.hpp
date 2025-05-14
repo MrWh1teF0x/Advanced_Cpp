@@ -9,82 +9,82 @@ namespace typelist {
 template <typename... Types>
 struct TypeList {
   // Получение размера
-  static constexpr int size() { return sizeof...(Types); }
+  static constexpr int Size() { return sizeof...(Types); }
 };
 
 // Получение типа по индексу
 
 template <std::size_t Index, typename TList>
-struct at;
+struct At;
 
 template <std::size_t Index, typename Head, typename... Types>
-struct at<Index, TypeList<Head, Types...>> {
-  using type = typename at<Index - 1, TypeList<Types...>>::type;
+struct At<Index, TypeList<Head, Types...>> {
+  using type = typename At<Index - 1, TypeList<Types...>>::type;
 };
 
 template <typename Head, typename... Types>
-struct at<0, TypeList<Head, Types...>> {
+struct At<0, TypeList<Head, Types...>> {
   using type = Head;
 };
 
 // Проверка наличия типа
 
 template <typename T, typename Head, typename... Types>
-struct contains;
+struct Contains;
 
 template <typename T, typename Head, typename... Types>
-struct contains<T, TypeList<Head, Types...>> {
+struct Contains<T, TypeList<Head, Types...>> {
   static constexpr bool value =
-      std::is_same<T, Head>::value || contains<T, TypeList<Types...>>::value;
+      std::is_same<T, Head>::value || Contains<T, TypeList<Types...>>::value;
 };
 
 template <typename T>
-struct contains<T, TypeList<>> {
+struct Contains<T, TypeList<>> {
   static constexpr bool value = false;
 };
 
 // Получение индекса типа
 
 template <typename... Types>
-struct index_of;
+struct IndexOf;
 
 template <typename T, typename... Types>
-struct index_of<T, TypeList<Types...>> {
-  static constexpr size_t index = index_of<T, Types...>::index;
+struct IndexOf<T, TypeList<Types...>> {
+  static constexpr size_t index = IndexOf<T, Types...>::index;
 };
 
 template <typename T, typename... Types>
-struct index_of<T, T, Types...> {
+struct IndexOf<T, T, Types...> {
   static constexpr size_t index = 0;
 };
 
 template <typename T, typename Head, typename... Types>
-struct index_of<T, Head, Types...> {
-  static constexpr size_t index = 1 + index_of<T, Types...>::index;
+struct IndexOf<T, Head, Types...> {
+  static constexpr size_t index = 1 + IndexOf<T, Types...>::index;
 };
 
 template <typename T>
-struct index_of<T> {
+struct IndexOf<T> {
   static_assert(sizeof(T) == 0, "Type doesn't exist in TypeList!");
 };
 
 // Добавление в начало
 
 template <typename T, typename TList>
-struct push_front;
+struct PushFront;
 
 template <typename T, typename... Types>
-struct push_front<T, TypeList<Types...>> {
+struct PushFront<T, TypeList<Types...>> {
   using type = TypeList<T, Types...>;
 };
 
 // Добавление в конец
 
 template <typename T, typename TList>
-struct push_back;
+struct PushBack;
 
 template <typename T, typename... Types>
-struct push_back<T, TypeList<Types...>> {
+struct PushBack<T, TypeList<Types...>> {
   using type = TypeList<Types..., T>;
 };
 
