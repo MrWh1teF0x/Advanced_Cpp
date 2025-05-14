@@ -1,6 +1,6 @@
-#include "user.h"
+#include "user.hpp"
 
-#include "group.h"
+#include "group.hpp"
 
 User::User(int id, std::string name) : name_(name), id_(id) {}
 

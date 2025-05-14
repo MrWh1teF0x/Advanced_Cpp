@@ -1,5 +1,5 @@
-#ifndef GROUP_H
-#define GROUP_H
+#ifndef GROUP_HPP
+#define GROUP_HPP
 
 #include <map>
 #include <memory>
@@ -24,4 +24,4 @@ class Group {
   std::map<int, std::weak_ptr<User>> users_;
 };
 
-#endif  // GROUP_H
+#endif  // GROUP_HPP

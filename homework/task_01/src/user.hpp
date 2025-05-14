@@ -1,5 +1,5 @@
-#ifndef USER_H
-#define USER_H
+#ifndef USER_HPP
+#define USER_HPP
 
 #include <iostream>
 #include <memory>
@@ -29,4 +29,4 @@ class User {
   std::weak_ptr<Group> group_ptr_;
 };
 
-#endif  // USER_H
+#endif  // USER_HPP

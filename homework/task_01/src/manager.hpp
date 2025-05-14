@@ -1,11 +1,11 @@
-#ifndef MANAGER_H
-#define MANAGER_H
+#ifndef MANAGER_HPP
+#define MANAGER_HPP
 
 #include <iostream>
 #include <map>
 
-#include "group.h"
-#include "user.h"
+#include "group.hpp"
+#include "user.hpp"
 
 class Manager {
  public:
@@ -40,4 +40,4 @@ class Manager {
   std::map<int, std::shared_ptr<Group>> all_groups_;
 };
 
-#endif  // MANAGER_H
+#endif  // MANAGER_HPP

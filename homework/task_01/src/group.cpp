@@ -1,6 +1,6 @@
-#include "group.h"
+#include "group.hpp"
 
-#include "user.h"
+#include "user.hpp"
 
 Group::Group(int id) : id_(id) {}
 
