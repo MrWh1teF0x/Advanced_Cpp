@@ -8,8 +8,6 @@ class counter {
 
   counter(const counter&) { count_++; }
 
-  counter(counter&&) noexcept { count_++; }
-
   ~counter() { count_--; }
 
   static size_t count() { return count_; }
