@@ -7,11 +7,6 @@
 
 using namespace typelist;
 
-struct Temp1;
-
-template <typename T1, typename T2>
-struct Temp2;
-
 int main() {
   using EmptyTypeList = TypeList<>;
   using SimpleTypeList = TypeList<char, double, int>;
