@@ -1,3 +1,6 @@
+#ifndef TYPEMAP_HPP
+#define TYPEMAP_HPP
+
 #include "typelist.hpp"
 
 template <typename... Types>
@@ -33,3 +36,5 @@ class TypeMap {
   using Keys = typelist::TypeList<Types...>;
   std::tuple<Types...> values_;
 };
+
+#endif  // TYPEMAP_HPP
