@@ -81,9 +81,14 @@ void Manager::DeleteGroup(int id) {
 }
 
 void Manager::SetUserToGroup(int user_id, int group_id) {
-  if (!IsUserExists(user_id)) std::cout << "User with this ID doesn't exist!\n";
-  if (!IsGroupExists(group_id))
+  if (!IsUserExists(user_id)) {
+    std::cout << "User with this ID doesn't exist!\n";
+    return;
+  }
+  if (!IsGroupExists(group_id)) {
     std::cout << "Group with this ID doesn't exist!\n";
+    return;
+  }
 
   auto group = all_groups_[group_id];
   auto user = all_users_[user_id];
