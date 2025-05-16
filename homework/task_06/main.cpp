@@ -17,17 +17,19 @@ int main() {
 
   Director director;
 
-  TextListBuilder textBuilder;
-  director.SetBuilder(&textBuilder);
-  director.Process(cps);
+  TextListBuilder text_builder;
+  director.SetBuilder(&text_builder);
+  director.SetCPs(cps);
   std::cout << "Список КП:\n";
-  textBuilder.Print();
+  text_builder.Print();
 
-  PenaltySumBuilder penaltyBuilder;
-  director.SetBuilder(&penaltyBuilder);
-  director.Process(cps);
-  std::cout << "\nСуммарный штраф: " << penaltyBuilder.GetTotal() << " ч.\n";
+  PenaltySumBuilder penalty_builder;
+  director.SetBuilder(&penalty_builder);
+  director.SetCPs(cps);
+  std::cout << "\nСуммарный штраф: " << penalty_builder.GetTotal()
+            << " часов\n";
 
   for (auto cp : cps) delete cp;
+
   return 0;
 }

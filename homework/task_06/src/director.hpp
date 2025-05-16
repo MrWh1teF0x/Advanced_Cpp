@@ -9,7 +9,7 @@ class Director {
  public:
   void SetBuilder(CPBuilder* b) { builder_ = b; }
 
-  void Process(const std::vector<ControlPoint*>& cps) {
+  void SetCPs(const std::vector<ControlPoint*>& cps) {
     builder_->Reset();
     for (auto cp : cps) {
       builder_->AddCP(*cp);

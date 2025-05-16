@@ -6,7 +6,7 @@
 class MandatoryCP : public ControlPoint {
  public:
   MandatoryCP(std::string name, double lat, double lon)
-      : name_(std::move(name)), coords_(lat, lon) {}
+      : name_(name), coords_(lat, lon) {}
 
   std::string GetName() const override { return name_; }
 

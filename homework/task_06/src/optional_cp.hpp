@@ -6,7 +6,7 @@
 class OptionalCP : public ControlPoint {
  public:
   OptionalCP(std::string name, double lat, double lon, double penalty)
-      : name_(std::move(name)), coords_(lat, lon), penalty_(penalty) {}
+      : name_(name), coords_(lat, lon), penalty_(penalty) {}
 
   std::string GetName() const override { return name_; }
 

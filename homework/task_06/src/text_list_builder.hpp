@@ -12,7 +12,7 @@ class TextListBuilder : public CPBuilder {
     auto [lat, lon] = cp.GetCoords();
     std::string penalty = cp.IsMandatory()
                               ? "незачёт СУ"
-                              : std::to_string(cp.GetPenalty()) + " ч.";
+                              : std::to_string(cp.GetPenalty()) + " часов";
 
     entries_.push_back(std::to_string(counter_++) + ". " + cp.GetName() +
                        " | " + std::to_string(lat) + ", " +
