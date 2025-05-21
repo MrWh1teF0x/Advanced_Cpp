@@ -5,7 +5,7 @@
 
 class Constant : public Expression {
  public:
-  explicit Constant(double val) : value_(val) {}
+  Constant(double val) : value_(val) {}
 
   double Calculate(const std::map<std::string, double>&) const override {
     return value_;

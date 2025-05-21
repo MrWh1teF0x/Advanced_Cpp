@@ -7,7 +7,7 @@
 
 class Variable : public Expression {
  public:
-  explicit Variable(const std::string& n) : name_(n) {}
+  Variable(const std::string& n) : name_(n) {}
 
   double Calculate(
       const std::map<std::string, double>& context) const override {
