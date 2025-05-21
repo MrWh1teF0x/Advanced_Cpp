@@ -12,9 +12,10 @@ class Variable : public Expression {
   double Calculate(
       const std::map<std::string, double>& context) const override {
     auto it = context.find(name_);
-    if (it == context.end()) {
-      throw std::runtime_error("Variable '" + name_ + "' not found in context");
-    }
+    if (it == context.end())
+      throw std::runtime_error("Variable '" + name_ +
+                               "' not found in context!");
+
     return it->second;
   }
 

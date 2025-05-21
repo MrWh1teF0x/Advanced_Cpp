@@ -12,7 +12,8 @@ class Division : public Operator {
   double Calculate(
       const std::map<std::string, double>& context) const override {
     double denom = right->Calculate(context);
-    if (denom == 0) throw std::runtime_error("Division by zero");
+    if (denom == 0) throw std::invalid_argument("Division by zero!");
+
     return left->Calculate(context) / denom;
   }
 
